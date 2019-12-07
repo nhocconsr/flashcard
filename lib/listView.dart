@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-
-
-
+import 'package:flip_card/flip_card.dart';
 
 class StarWarsData extends StatefulWidget {
   @override
@@ -54,6 +52,33 @@ class StarWarsState extends State<StarWarsData> {
                           ],
                         )),
                   ),
+                  FlipCard(
+                    direction: FlipDirection.HORIZONTAL, // default
+                    front: Card(
+                      child: Container(
+                          padding: EdgeInsets.all(15.0),
+                          child: Row(
+                            children: <Widget>[
+                              Text("Question: "),
+                              Text(data[index]["question"],
+                                  style: TextStyle(
+                                      fontSize: 18.0, color: Colors.black87)),
+                            ],
+                          )),
+                    ),
+                    back: Card(
+                      child: Container(
+                          padding: EdgeInsets.all(15.0),
+                          child: Row(
+                            children: <Widget>[
+                              Text("Answer: "),
+                              Text(data[index]["answer"],
+                                  style: TextStyle(
+                                      fontSize: 18.0, color: Colors.black87)),
+                            ],
+                          )),
+                    ),
+                  )
                 ],
               ),
             ),
