@@ -2,14 +2,19 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:flip_card/flip_card.dart';
 
-class StarWarsData extends StatefulWidget {
+
+
+
+class Questions extends StatefulWidget {
+  final String name;
+  Questions(this.name);
+
   @override
-  StarWarsState createState() => StarWarsState();
+  QuestionsState createState() => QuestionsState();
 }
 
-class StarWarsState extends State<StarWarsData> {
+class QuestionsState extends State<Questions> {
   final String url = "http://54.250.202.29/questions";
   List data;
 
@@ -29,8 +34,8 @@ class StarWarsState extends State<StarWarsData> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Questions"),
-        backgroundColor: Colors.cyan,
+        title: Text(widget.name),
+        backgroundColor: Colors.lightGreen,
       ),
       body: ListView.builder(
         itemCount: data == null ? 0 : data.length,
@@ -52,33 +57,6 @@ class StarWarsState extends State<StarWarsData> {
                           ],
                         )),
                   ),
-                  FlipCard(
-                    direction: FlipDirection.HORIZONTAL, // default
-                    front: Card(
-                      child: Container(
-                          padding: EdgeInsets.all(15.0),
-                          child: Row(
-                            children: <Widget>[
-                              Text("Question: "),
-                              Text(data[index]["question"],
-                                  style: TextStyle(
-                                      fontSize: 18.0, color: Colors.black87)),
-                            ],
-                          )),
-                    ),
-                    back: Card(
-                      child: Container(
-                          padding: EdgeInsets.all(15.0),
-                          child: Row(
-                            children: <Widget>[
-                              Text("Answer: "),
-                              Text(data[index]["answer"],
-                                  style: TextStyle(
-                                      fontSize: 18.0, color: Colors.black87)),
-                            ],
-                          )),
-                    ),
-                  )
                 ],
               ),
             ),
