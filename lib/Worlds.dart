@@ -12,23 +12,23 @@ class Worlds extends StatelessWidget {
         padding: EdgeInsets.all(10),
         child: ListView(children: <Widget>[
         RaisedButton(
-              onPressed: (){
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => Questions("Beginner World"),
-                  ),
-                );
-              },
+          onPressed: (){
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => Questions("Beginner World"),
+              ),
+            );
+          },
             child: Card(
-              elevation: 10,
-            child:Padding(
-              padding: const EdgeInsets.symmetric (vertical: 10, horizontal: 8),
-            child: Text("Beginner World",
-              style: TextStyle(fontSize: 18) ,
+              elevation: 1,
+             child:Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+              child: Text("Beginner World",
+                style: TextStyle(fontSize: 18) ,
                   ),
                 ),
               ),
             ),
-          RaisedButton(
+        RaisedButton(
                 onPressed: (){
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => Questions(" Intermidiate World"),
@@ -45,7 +45,7 @@ class Worlds extends StatelessWidget {
             ),
           ),
         ),
-         RaisedButton(
+        RaisedButton(
                 onPressed: (){
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => Questions("Advanced World"),
