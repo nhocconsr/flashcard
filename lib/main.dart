@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import './category2.dart';
+import 'package:httptest_app/category1.dart';
+import './category1.dart';
 
 void main() {
   runApp(MaterialApp(
-   home: new Category2(),
+   home: new Category1(),
   ));
 }
 
