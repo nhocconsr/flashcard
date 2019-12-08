@@ -24,9 +24,7 @@ class BodyLayout extends StatelessWidget {
     return _myListView(context);
   }
 }
-
-    // replace this function with the code in the examples
-  Widget _myListView(BuildContext context) {
+    Widget _myListView(BuildContext context) {
 
       final titles = ['Arabic', 'Chinese', 'English', 'French',
       'German', 'Japanese', 'Korean', 'Russian', 'Spanish'];
@@ -39,14 +37,9 @@ class BodyLayout extends StatelessWidget {
       return ListView.builder(
         itemCount: titles.length,
         itemBuilder: (context, index) {
-
-
-         return RaisedButton(
+ return RaisedButton(
           onPressed: (){
-            Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => Questions("Beginner World"),
-              ),
-            );
+           //go to difficulties
           },
             child:  Card( //                           <-- Card widget
             child: ListTile(
@@ -55,9 +48,15 @@ class BodyLayout extends StatelessWidget {
             ),
           )
         );
+
+
+          // return Card( //                           <-- Card widget
+          //   child: ListTile(
+          //     leading: Icon(icons[index]),
+          //     title: Text(titles[index]),
+          //   ),
+          // );
         },
       );
     }
-
-
     
