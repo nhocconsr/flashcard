@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './BeginnerQestions.dart';
+import './difficulties.dart';
 
 class Category2 extends StatelessWidget {
   @override
@@ -7,6 +7,10 @@ class Category2 extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Second Category',
+      // initialRoute: '/',
+      routes: {
+        '/difficulties': (context) => Difficulties(),       
+      },
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
@@ -24,39 +28,29 @@ class BodyLayout extends StatelessWidget {
     return _myListView(context);
   }
 }
-    Widget _myListView(BuildContext context) {
 
-      final titles = ['Arabic', 'Chinese', 'English', 'French',
-      'German', 'Japanese', 'Korean', 'Russian', 'Spanish'];
+Widget _myListView(BuildContext context) {
+  final titles = ['Arabic', 'Chinese', 'English', 'French',
+  'German', 'Japanese', 'Korean', 'Russian', 'Spanish'];
+  final icons = [Icons.directions_bike, Icons.directions_boat,
+  Icons.directions_bus, Icons.directions_car, Icons.directions_railway,
+  Icons.directions_run, Icons.directions_subway, Icons.directions_transit,
+  Icons.directions_walk];
 
-      final icons = [Icons.directions_bike, Icons.directions_boat,
-      Icons.directions_bus, Icons.directions_car, Icons.directions_railway,
-      Icons.directions_run, Icons.directions_subway, Icons.directions_transit,
-      Icons.directions_walk];
-
-      return ListView.builder(
-        itemCount: titles.length,
-        itemBuilder: (context, index) {
- return RaisedButton(
-          onPressed: (){
-           //go to difficulties
-          },
-            child:  Card( //                           <-- Card widget
-            child: ListTile(
-              leading: Icon(icons[index]),
-              title: Text(titles[index]),
-            ),
-          )
-        );
-
-
-          // return Card( //                           <-- Card widget
-          //   child: ListTile(
-          //     leading: Icon(icons[index]),
-          //     title: Text(titles[index]),
-          //   ),
-          // );
-        },
+  return ListView.builder(
+    itemCount: titles.length,
+    itemBuilder: (context, index) {
+  return RaisedButton(
+      onPressed: (){
+        Navigator.pushNamed(context, '/difficulties');
+      },
+        child:  Card( 
+        child: ListTile(
+          leading: Icon(icons[index]),
+          title: Text(titles[index]),
+          ),
+        )
       );
-    }
-    
+    },
+  );
+}
