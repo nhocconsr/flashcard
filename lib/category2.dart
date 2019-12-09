@@ -15,10 +15,15 @@ class Category2 extends StatelessWidget {
         primarySwatch: Colors.teal,
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text('Sub Category')),
+        appBar: AppBar(
+          title: Text('Sub Category'),
+          leading: IconButton(icon: Icon(Icons.arrow_back),
+            onPressed: () => Navigator.pop(context, false) ,
+           ),
+          ),
         body: BodyLayout(),
-      ),
-    );
+       )
+     );
   }
 }
 
