@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
+import './BeginnerQestions.dart';
 
 
 class Difficulties extends StatelessWidget {
@@ -7,9 +7,9 @@ class Difficulties extends StatelessWidget {
    Widget build(BuildContext context) => 
     MaterialApp(
       title: 'Difficulties',
-      // routes: {
-
-      // },
+     routes: {
+        '/questions': (context) => Questions('hello'),       
+      },
       theme: ThemeData(
         primarySwatch: Colors.teal, //Appbar's color
       ),
@@ -20,11 +20,33 @@ class Difficulties extends StatelessWidget {
             onPressed: () => Navigator.pop(context, false) ,
              ),
            ),
-        body: Text('hello world'),
+        body: BodyPartsOfDifficulties(),
       ),
-
     );
- 
+}
 
 
+class BodyPartsOfDifficulties extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => _difficultiesView(context);
+}
+
+Widget _difficultiesView(BuildContext context){
+  final difficulties = ['Begginer', 'Intermidiate', 'Advanced'];
+  final icons = [Icons.star_border, Icons.star_half, Icons.star];
+
+  return ListView.builder(
+    itemCount: difficulties.length,
+    itemBuilder: (context, index) => RaisedButton(
+      onPressed: (){
+        Navigator.pushNamed(context, '/questions');
+      },
+      child: Card(
+        child: ListTile(
+          leading: Icon(icons[index]),
+          title: Text(difficulties[index]),
+        ),
+      ),
+    ),
+  );
 }

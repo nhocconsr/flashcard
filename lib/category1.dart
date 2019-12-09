@@ -17,13 +17,13 @@ class Category1 extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(title: Text('Category')),
-        body: BodyLayout(),
+        body: BodyPartsOfMainCategory(),
       ),
     );
   }
 }
 
-class BodyLayout extends StatelessWidget {
+class BodyPartsOfMainCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _myListView(context);

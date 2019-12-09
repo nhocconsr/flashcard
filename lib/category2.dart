@@ -21,21 +21,19 @@ class Category2 extends StatelessWidget {
             onPressed: () => Navigator.pop(context, false) ,
            ),
           ),
-        body: BodyLayout(),
+        body: BodyPartsOfSubCategory(),
        )
      );
   }
 }
 
-class BodyLayout extends StatelessWidget {
+class BodyPartsOfSubCategory extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return _myListView(context);
-  }
+  Widget build(BuildContext context) => _myListView(context);
 }
 
 Widget _myListView(BuildContext context) {
-  final titles = ['Arabic', 'Chinese', 'English', 'French',
+  final subCategories = ['Arabic', 'Chinese', 'English', 'French',
   'German', 'Japanese', 'Korean', 'Russian', 'Spanish'];
   final icons = [Icons.directions_bike, Icons.directions_boat,
   Icons.directions_bus, Icons.directions_car, Icons.directions_railway,
@@ -43,7 +41,7 @@ Widget _myListView(BuildContext context) {
   Icons.directions_walk];
 
   return ListView.builder(
-    itemCount: titles.length,
+    itemCount: subCategories.length,
     itemBuilder: (context, index) {
   return RaisedButton(
       onPressed: (){
@@ -52,7 +50,7 @@ Widget _myListView(BuildContext context) {
         child:  Card( 
         child: ListTile(
           leading: Icon(icons[index]),
-          title: Text(titles[index]),
+          title: Text(subCategories[index]),
           ),
         )
       );
