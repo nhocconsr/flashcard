@@ -16,7 +16,7 @@ class Category1 extends StatelessWidget {
         primarySwatch: Colors.teal,
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text('Second Category')),
+        appBar: AppBar(title: Text('Category')),
         body: BodyLayout(),
       ),
     );
@@ -43,6 +43,7 @@ Widget _myListView(BuildContext context) {
   return RaisedButton(
       onPressed: (){
         Navigator.pushNamed(context, '/category2');
+        // Navigator.pop(context);
       },
         child:  Card( 
         child: ListTile(

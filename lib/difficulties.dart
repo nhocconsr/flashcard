@@ -6,7 +6,7 @@ class Difficulties extends StatelessWidget {
   Widget build(BuildContext context){
     return Scaffold(appBar: AppBar(
       backgroundColor: Colors.cyan,
-      title: Text('Worlds'),
+      title: Text('Difficulties'),
       ),
       body: Container(
         padding: EdgeInsets.all(10),

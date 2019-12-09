@@ -7,7 +7,7 @@ class Category2 extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Second Category',
-      // initialRoute: '/',
+      initialRoute: '/',
       routes: {
         '/difficulties': (context) => Difficulties(),       
       },
@@ -15,7 +15,7 @@ class Category2 extends StatelessWidget {
         primarySwatch: Colors.teal,
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text('Second Category')),
+        appBar: AppBar(title: Text('Sub Category')),
         body: BodyLayout(),
       ),
     );
