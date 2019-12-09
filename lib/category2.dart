@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './difficulties.dart';
+import './tempDifficulties.dart';
 
 class Category2 extends StatelessWidget {
   @override
@@ -17,7 +17,7 @@ class Category2 extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text('Sub Category'),
-          leading: IconButton(icon: Icon(Icons.arrow_back),
+          leading: IconButton(icon: Icon(Icons.navigate_before),
             onPressed: () => Navigator.pop(context, false) ,
            ),
           ),
