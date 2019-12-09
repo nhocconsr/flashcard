@@ -1,29 +1,25 @@
 import 'package:flutter/material.dart';
-import './difficulties.dart';
+import 'package:httptest_app/category2.dart';
+import './category2.dart';
 
-class Category2 extends StatelessWidget {
+class Category1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Second Category',
-      initialRoute: '/',
+      title: 'Category',
+      // initialRoute: '/',
       routes: {
-        '/difficulties': (context) => Difficulties(),       
+        '/category2': (context) => Category2(),       
       },
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Sub Category'),
-          leading: IconButton(icon: Icon(Icons.arrow_back),
-            onPressed: () => Navigator.pop(context, false) ,
-           ),
-          ),
+        appBar: AppBar(title: Text('Category')),
         body: BodyLayout(),
-       )
-     );
+      ),
+    );
   }
 }
 
@@ -35,19 +31,19 @@ class BodyLayout extends StatelessWidget {
 }
 
 Widget _myListView(BuildContext context) {
-  final titles = ['Arabic', 'Chinese', 'English', 'French',
-  'German', 'Japanese', 'Korean', 'Russian', 'Spanish'];
+  final titles = ['Art', 'Business', 'Culture', 'Language',
+ 'History', 'Math', 'Music'];
   final icons = [Icons.directions_bike, Icons.directions_boat,
   Icons.directions_bus, Icons.directions_car, Icons.directions_railway,
-  Icons.directions_run, Icons.directions_subway, Icons.directions_transit,
-  Icons.directions_walk];
+  Icons.directions_run, Icons.directions_subway];
 
   return ListView.builder(
     itemCount: titles.length,
     itemBuilder: (context, index) {
   return RaisedButton(
       onPressed: (){
-        Navigator.pushNamed(context, '/difficulties');
+        Navigator.pushNamed(context, '/category2');
+        // Navigator.pop(context);
       },
         child:  Card( 
         child: ListTile(
