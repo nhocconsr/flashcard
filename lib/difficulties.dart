@@ -5,7 +5,7 @@ class Difficulties extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return Scaffold(appBar: AppBar(
-      backgroundColor: Colors.cyan,
+      backgroundColor: Colors.teal,
       title: Text('Difficulties'),
       ),
       body: Container(
