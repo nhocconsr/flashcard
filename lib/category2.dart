@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './tempDifficulties.dart';
+import './difficulties.dart';
 
 class Category2 extends StatelessWidget {
   @override

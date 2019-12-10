@@ -19,9 +19,9 @@ class Difficulties extends StatelessWidget {
             );
           },
             child: Card(
-              elevation: 1,
+              elevation: 1, 
              child:Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16),
+                padding: const EdgeInsets.symmetric(vertical: 1),
               child: Text("Beginner World",
                 style: TextStyle(fontSize: 18) ,
                   ),
