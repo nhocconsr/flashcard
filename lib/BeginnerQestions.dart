@@ -47,7 +47,7 @@ class QuestionsState extends State<Questions> {
       return Scaffold(
           appBar: AppBar(
             title: Text(widget.name),
-            backgroundColor: Colors.lightGreen,
+            backgroundColor: Colors.teal,
           ),
           body:
           TransformerPageView(
@@ -96,7 +96,7 @@ class QuestionsState extends State<Questions> {
       return Scaffold(
         appBar: AppBar(
           title: Text(widget.name),
-          backgroundColor: Colors.lightGreen,
+          backgroundColor: Colors.teal,
         ),
       );
     }
