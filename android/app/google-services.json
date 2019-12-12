@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "159308931086",
+    "firebase_url": "https://duelingo-login.firebaseio.com",
+    "project_id": "duelingo-login",
+    "storage_bucket": "duelingo-login.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159308931086:android:6f67bf1fd523a6ddbd9c5f",
+        "android_client_info": {
+          "package_name": "com.example.duelingoflashcard.duelingo_flashcard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159308931086-ro3722ovohor3dgjhkrv7d1e1fnsmg6n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFtz7DbV5Hdz-2bLuP3_EN_fDd7lPeur4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159308931086-ro3722ovohor3dgjhkrv7d1e1fnsmg6n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
