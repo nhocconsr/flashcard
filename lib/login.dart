@@ -46,24 +46,36 @@ class LoginState extends State<Login> {
       ),
     );
 
-    final loginButton = Padding(
+      final loginButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
-      child: Material(
-        borderRadius: BorderRadius.circular(30.0),
-        shadowColor: Colors.cyan.shade100,
-        elevation: 5.0,
-        child: MaterialButton(
-          minWidth: 200.0,
-          height: 42.0,
-          onPressed: (){
-
-          },
-          padding: EdgeInsets.all(12),
-          color: Colors.cyan[500],
-          child: Text('Log In', style: TextStyle(color: Colors.white)),
+      child: RaisedButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
         ),
+        onPressed: () {
+          Navigator.of(context).pushNamed(Category1.tag);  
+        },
+        padding: EdgeInsets.all(12),
+        color: Colors.cyan[500],
+        child: Text('Log In', style: TextStyle(color: Colors.white,fontSize: 20)),
       ),
     );
+
+       final signUpButton = Padding(
+      padding: EdgeInsets.symmetric(vertical: 16.0),
+      child: RaisedButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+        ),
+        onPressed: () {
+          // Navigator.of(context).pushNamed(HomePage.tag);
+        },
+        padding: EdgeInsets.all(12),
+        color: Colors.orange[300],
+        child: Text('Create a New Account', style: TextStyle(color: Colors.white, fontSize: 20))
+      ),
+    );
+
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -78,7 +90,8 @@ class LoginState extends State<Login> {
             SizedBox(height: 8.0),
             password,
             SizedBox(height: 24.0),
-            loginButton
+            loginButton,
+            signUpButton
           ],
         )
       ),

@@ -3,6 +3,7 @@ import 'package:httptest_app/category2.dart';
 import './category2.dart';
 
 class Category1 extends StatelessWidget {
+  static String tag = 'category1';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
