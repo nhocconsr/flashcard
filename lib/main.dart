@@ -1,7 +1,10 @@
+import 'package:duelingo_flashcard/services/auth.dart';
 import 'package:duelingo_flashcard/wrapper.dart';
 import 'package:flutter/material.dart';
 import './category1.dart';
 import './login.dart';
+import 'package:provider/provider.dart';
+import './models/user.dart';
 
 // void main() {
 //   runApp(MaterialApp(
@@ -18,15 +21,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'duelingo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.cyan,
-        fontFamily: 'Nunito',
+    return StreamProvider<User>.value(
+        value:AuthService().user,
+        child: MaterialApp(
+        // title: 'duelingo',
+        // debugShowCheckedModeBanner: false,
+        // theme: ThemeData(
+        //   primarySwatch: Colors.cyan,
+        //   fontFamily: 'Nunito',
+        // ),
+        home: Wrapper(),
+        routes: routes,
       ),
-      home: Wrapper(),
-      routes: routes,
     );
   }
 }
