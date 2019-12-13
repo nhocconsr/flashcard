@@ -19,7 +19,7 @@ class Wrapper extends StatelessWidget{
     if(user == null){
       return Authenticate();
     } else {
-      return Category2(); // need to change the scroll page
+      return Authenticate(); // need to change the scroll page
     }
   }
 }
