@@ -3,7 +3,7 @@ import 'package:duelingo_flashcard/category1.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import './models/user.dart';
-import './category1.dart';
+import './category2.dart';
 
 
 class Wrapper extends StatelessWidget{
@@ -19,7 +19,7 @@ class Wrapper extends StatelessWidget{
     if(user == null){
       return Authenticate();
     } else {
-      return Category1();
+      return Category2(); // need to change the scroll page
     }
   }
 }
