@@ -1,6 +1,6 @@
-import 'package:duelingo_flashcard/services/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart';
+import './signin.dart';
 
 class Authenticate extends StatefulWidget {
   @override 
