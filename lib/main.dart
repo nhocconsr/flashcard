@@ -1,3 +1,4 @@
+import 'package:duelingo_flashcard/wrapper.dart';
 import 'package:flutter/material.dart';
 import './category1.dart';
 import './login.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.cyan,
         fontFamily: 'Nunito',
       ),
-      home: Login(),
+      home: Wrapper(),
       routes: routes,
     );
   }
