@@ -2,7 +2,7 @@ import 'package:duelingo_flashcard/services/auth.dart';
 import 'package:duelingo_flashcard/wrapper.dart';
 import 'package:flutter/material.dart';
 import './category1.dart';
-import './login.dart';
+import './toppage.dart';
 import 'package:provider/provider.dart';
 import './models/user.dart';
 
