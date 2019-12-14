@@ -1,25 +1,30 @@
-
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import './toppage.dart';
+import './homepage.dart';
 
-class LoginPage extends StatefulWidget {
-  LoginPage({Key key}) : super(key: key);
+class RegisterPage extends StatefulWidget {
+  RegisterPage({Key key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  final GlobalKey<FormState> _loginFormKey = GlobalKey<FormState>();
+class _RegisterPageState extends State<RegisterPage> {
+  final GlobalKey<FormState> _registerFormKey = GlobalKey<FormState>();
+  TextEditingController firstNameInputController;
+  TextEditingController lastNameInputController;
   TextEditingController emailInputController;
   TextEditingController pwdInputController;
+  TextEditingController confirmPwdInputController;
 
   @override
   initState() {
+    firstNameInputController = new TextEditingController();
+    lastNameInputController = new TextEditingController();
     emailInputController = new TextEditingController();
     pwdInputController = new TextEditingController();
+    confirmPwdInputController = new TextEditingController();
     super.initState();
   }
 
@@ -46,15 +51,34 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Login"),
+          title: Text("Register"),
         ),
         body: Container(
             padding: const EdgeInsets.all(20.0),
             child: SingleChildScrollView(
                 child: Form(
-              key: _loginFormKey,
+              key: _registerFormKey,
               child: Column(
                 children: <Widget>[
+                  TextFormField(
+                    decoration: InputDecoration(
+                        labelText: 'First Name*', hintText: "John"),
+                    controller: firstNameInputController,
+                    validator: (value) {
+                      if (value.length < 3) {
+                        return "Please enter a valid first name.";
+                      }
+                    },
+                  ),
+                  TextFormField(
+                      decoration: InputDecoration(
+                          labelText: 'Last Name*', hintText: "Doe"),
+                      controller: lastNameInputController,
+                      validator: (value) {
+                        if (value.length < 3) {
+                          return "Please enter a valid last name.";
+                        }
+                      }),
                   TextFormField(
                     decoration: InputDecoration(
                         labelText: 'Email*', hintText: "john.doe@gmail.com"),
@@ -69,39 +93,80 @@ class _LoginPageState extends State<LoginPage> {
                     obscureText: true,
                     validator: pwdValidator,
                   ),
+                  TextFormField(
+                    decoration: InputDecoration(
+                        labelText: 'Confirm Password*', hintText: "********"),
+                    controller: confirmPwdInputController,
+                    obscureText: true,
+                    validator: pwdValidator,
+                  ),
                   RaisedButton(
-                    child: Text("Login"),
+                    child: Text("Register"),
                     color: Theme.of(context).primaryColor,
                     textColor: Colors.white,
                     onPressed: () {
-                      if (_loginFormKey.currentState.validate()) {
-                        FirebaseAuth.instance
-                            .signInWithEmailAndPassword(
-                                email: emailInputController.text,
-                                password: pwdInputController.text)
-                            .then((currentUser) => Firestore.instance
-                                .collection("users")
-                                .document(currentUser.uid)
-                                .get()
-                                .then((DocumentSnapshot result) =>
-                                    Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => HomePage(
-                                                  title: result["fname"] +
-                                                      "'s Tasks",
-                                                  uid: currentUser.uid,
-                                                ))))
-                                .catchError((err) => print(err)))
-                            .catchError((err) => print(err));
+                      if (_registerFormKey.currentState.validate()) {
+                        if (pwdInputController.text ==
+                            confirmPwdInputController.text) {
+                          FirebaseAuth.instance
+                              .createUserWithEmailAndPassword(
+                                  email: emailInputController.text,
+                                  password: pwdInputController.text)
+                              .then((currentUser) => Firestore.instance
+                                  .collection("users")
+                                  .document(currentUser.uid)
+                                  .setData({
+                                    "uid": currentUser.uid,
+                                    "fname": firstNameInputController.text,
+                                    "surname": lastNameInputController.text,
+                                    "email": emailInputController.text,
+                                  })
+                                  .then((result) => {
+                                        Navigator.pushAndRemoveUntil(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) => HomePage(
+                                                      title:
+                                                          firstNameInputController
+                                                                  .text +
+                                                              "'s Tasks",
+                                                      uid: currentUser.uid,
+                                                    )),
+                                            (_) => false),
+                                        firstNameInputController.clear(),
+                                        lastNameInputController.clear(),
+                                        emailInputController.clear(),
+                                        pwdInputController.clear(),
+                                        confirmPwdInputController.clear()
+                                      })
+                                  .catchError((err) => print(err)))
+                              .catchError((err) => print(err));
+                        } else {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text("Error"),
+                                  content: Text("The passwords do not match"),
+                                  actions: <Widget>[
+                                    FlatButton(
+                                      child: Text("Close"),
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    )
+                                  ],
+                                );
+                              });
+                        }
                       }
                     },
                   ),
-                  Text("Don't have an account yet?"),
+                  Text("Already have an account?"),
                   FlatButton(
-                    child: Text("Register here!"),
+                    child: Text("Login here!"),
                     onPressed: () {
-                      Navigator.pushNamed(context, "/register");
+                      Navigator.pop(context);
                     },
                   )
                 ],
@@ -109,4 +174,3 @@ class _LoginPageState extends State<LoginPage> {
             ))));
   }
 }
-view rawlogin.dart hosted with ❤ by GitHub
