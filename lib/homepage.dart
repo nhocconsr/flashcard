@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import './category1.dart';
 
-class Login extends StatefulWidget {
-static String tag = 'login-page';
+class HomePage extends StatefulWidget {
+static String tag = 'homePage-page';
   @override
-   LoginState createState() =>  LoginState();
+   HomePageState createState() =>  HomePageState();
 }
 
-class LoginState extends State<Login> {
+class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final logo = Hero(
@@ -61,7 +61,7 @@ class LoginState extends State<Login> {
       ),
     );
 
-       final signUpButton = Padding(
+       final createAccountButton = Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: RaisedButton(
         shape: RoundedRectangleBorder(
@@ -91,7 +91,7 @@ class LoginState extends State<Login> {
             // password,
             loginButton,
             SizedBox(height: 24.0),
-            signUpButton
+            createAccountButton
           ],
         )
       ),
