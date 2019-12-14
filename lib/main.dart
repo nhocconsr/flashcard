@@ -14,10 +14,10 @@ import './models/user.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  final routes = <String, WidgetBuilder>{
-    Login.tag: (context) => Login(),
-    Category1.tag: (context) => Category1(),
-  };
+  // final routes = <String, WidgetBuilder>{
+  //   Login.tag: (context) => Login(),
+  //   Category1.tag: (context) => Category1(),
+  // };
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
         //   primarySwatch: Colors.cyan,
         //   fontFamily: 'Nunito',
         // ),
-        home: Wrapper(),
-        routes: routes,
+        home: Login(),
+        // routes: routes,
       ),
     );
   }
