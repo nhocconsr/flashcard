@@ -39,11 +39,10 @@ class QuestionsState extends State<Questions> {
     if (questionsData != null) {
 
       List<Color> list = [
-        Colors.redAccent,
-        Colors.blueAccent,
-        Colors.greenAccent
+        Colors.blue[50],
+        Colors.blue[100],
+        Colors.blue[200]
       ];
-
       return Scaffold(
           appBar: AppBar(
             title: Text(widget.name),
