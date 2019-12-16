@@ -1,4 +1,4 @@
-package com.example.duelingoflashcard.duelingo_flashcard
+package com.cc10.duelingoflashcard.duelingo_flashcard
 
 import android.os.Bundle
 
