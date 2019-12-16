@@ -39,9 +39,9 @@ class QuestionsState extends State<Questions> {
     if (questionsData != null) {
 
       List<Color> list = [
-        Colors.redAccent,
-        Colors.blueAccent,
-        Colors.greenAccent
+        Colors.blue[50],
+        Colors.blue[100],
+        Colors.blue[200]
       ];
 
       questionsData.shuffle();
@@ -69,7 +69,7 @@ class QuestionsState extends State<Questions> {
                               "${questionsData[index]["Question"]}",
                               textAlign: TextAlign.center,
                               style: new TextStyle(
-                                  fontSize: 80.0, color: Colors.black),
+                                  fontSize: 40.0, color: Colors.black),
                             ),
                           ),
                         ),
@@ -83,7 +83,7 @@ class QuestionsState extends State<Questions> {
                                 "${questionsData[index]["Answer"]}",
                                 textAlign: TextAlign.center,
                                 style: new TextStyle(
-                                    fontSize: 80.0, color: Colors.black),
+                                    fontSize: 40.0, color: Colors.black),
                               ),
                             ),
                           )
