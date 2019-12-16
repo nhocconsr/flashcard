@@ -66,7 +66,7 @@ class QuestionsState extends State<Questions> {
                               "${questionsData[index]["question"]}",
                               textAlign: TextAlign.center,
                               style: new TextStyle(
-                                  fontSize: 80.0, color: Colors.black),
+                                  fontSize: 40.0, color: Colors.black),
                             ),
                           ),
                         ),
@@ -80,7 +80,7 @@ class QuestionsState extends State<Questions> {
                                 "${questionsData[index]["answer"]}",
                                 textAlign: TextAlign.center,
                                 style: new TextStyle(
-                                    fontSize: 80.0, color: Colors.black),
+                                    fontSize: 40.0, color: Colors.black),
                               ),
                             ),
                           )
