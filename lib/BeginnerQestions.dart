@@ -6,10 +6,10 @@ import 'package:flip_card/flip_card.dart';
 import 'package:transformer_page_view/transformer_page_view.dart';
 import 'utils/buildin_transformers.dart';
 
-
 class Questions extends StatefulWidget {
-  final String name;
-  Questions(this.name);
+  final String deck;
+  final String type;
+  Questions(this.deck, this.type);
 
   @override
   QuestionsState createState() => QuestionsState();
@@ -17,14 +17,14 @@ class Questions extends StatefulWidget {
 
 class QuestionsState extends State<Questions> {
 
-  List data;
+  Map data;
   List questionsData;
 
   Future getData() async {
-    http.Response response = await http.get("http://54.250.202.29/questions");
+    http.Response response = await http.get("http://13.114.171.232/${widget.deck}/N5/${widget.type}");
     data = json.decode(response.body);
     setState(() {
-      questionsData = data;
+      questionsData = data["results"];
     });
   }
 
@@ -39,14 +39,16 @@ class QuestionsState extends State<Questions> {
     if (questionsData != null) {
 
       List<Color> list = [
-        Colors.redAccent,
-        Colors.blueAccent,
-        Colors.greenAccent
+        Colors.blue[50],
+        Colors.blue[100],
+        Colors.blue[200]
       ];
+
+      questionsData.shuffle();
 
       return Scaffold(
           appBar: AppBar(
-            title: Text(widget.name),
+            title: Text(widget.deck),
             backgroundColor: Colors.teal,
           ),
           body:
@@ -64,10 +66,10 @@ class QuestionsState extends State<Questions> {
                           color: list[index % list.length],
                           child:Center(
                             child: Text(
-                              "${questionsData[index]["question"]}",
+                              "${questionsData[index]["Question"]}",
                               textAlign: TextAlign.center,
                               style: new TextStyle(
-                                  fontSize: 80.0, color: Colors.black),
+                                  fontSize: 40.0, color: Colors.black),
                             ),
                           ),
                         ),
@@ -78,10 +80,10 @@ class QuestionsState extends State<Questions> {
                             color: Colors.lime,
                             child: Center(
                               child: Text(
-                                "${questionsData[index]["answer"]}",
+                                "${questionsData[index]["Answer"]}",
                                 textAlign: TextAlign.center,
                                 style: new TextStyle(
-                                    fontSize: 80.0, color: Colors.black),
+                                    fontSize: 40.0, color: Colors.black),
                               ),
                             ),
                           )
@@ -95,7 +97,7 @@ class QuestionsState extends State<Questions> {
     } else {
       return Scaffold(
         appBar: AppBar(
-          title: Text(widget.name),
+          title: Text(widget.deck),
           backgroundColor: Colors.teal,
         ),
       );

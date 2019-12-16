@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import './category1.dart';
+import './homepage.dart';
+import './selectFlashcards.dart';
 
 class Login extends StatefulWidget {
 static String tag = 'login-page';
@@ -53,7 +55,11 @@ class LoginState extends State<Login> {
           borderRadius: BorderRadius.circular(24),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed(Category1.tag);  
+//          Navigator.of(context).pushNamed(Category1.tag);
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => DropdownScreen(),
+          )
+          );
         },
         padding: EdgeInsets.all(12),
         color: Colors.cyan[500],
@@ -69,6 +75,10 @@ class LoginState extends State<Login> {
         ),
         onPressed: () {
           // Navigator.of(context).pushNamed(HomePage.tag);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Homepage()),
+          );
         },
         padding: EdgeInsets.all(12),
         color: Colors.orange[300],
