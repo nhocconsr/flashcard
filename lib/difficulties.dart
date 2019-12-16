@@ -14,7 +14,7 @@ class Difficulties extends StatelessWidget {
         RaisedButton(
           onPressed: (){
             Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => Questions("Beginner World"),
+              builder: (context) => Questions("Beginner World", ''),
               ),
             );
           },
@@ -31,7 +31,7 @@ class Difficulties extends StatelessWidget {
         RaisedButton(
                 onPressed: (){
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Questions(" Intermidiate World"),
+                    builder: (context) => Questions(" Intermidiate World", ''),
                     ),
                   );
                 },
@@ -48,7 +48,7 @@ class Difficulties extends StatelessWidget {
         RaisedButton(
                 onPressed: (){
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Questions("Advanced World"),
+                    builder: (context) => Questions("Advanced World", ''),
                     ),
                   );
                 },
