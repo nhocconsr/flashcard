@@ -18,14 +18,14 @@ class DropdownScreenState extends State<DropdownScreen> {
   Item selectedType;
 
   List<Item> decks = <Item>[
-    const Item('Standard',Icon(Icons.android,color:  const Color(0xFF167F67),)),
-    const Item('Universal',Icon(Icons.flag,color:  const Color(0xFF167F67),)),
+    const Item('Standard',Icon(Icons.android,color:  const Color(0xFF167F67), size: 25,)),
+    const Item('Universal',Icon(Icons.flag,color:  const Color(0xFF167F67), size: 25,)),
   ];
   List<Item> types = <Item>[
-    const Item('Vocabulary',Icon(Icons.android,color:  const Color(0xFF167F67),)),
-    const Item('Kanji',Icon(Icons.flag,color:  const Color(0xFF167F67),)),
-    const Item('Hiragana',Icon(Icons.android,color:  const Color(0xFF167F67),)),
-    const Item('Katakana',Icon(Icons.flag,color:  const Color(0xFF167F67),)),
+    const Item('Vocabulary',Icon(Icons.android,color:  const Color(0xFF167F67),size: 25,)),
+    const Item('Kanji',Icon(Icons.flag,color:  const Color(0xFF167F67),size: 25)),
+    const Item('Hiragana',Icon(Icons.android,color:  const Color(0xFF167F67),size: 25)),
+    const Item('Katakana',Icon(Icons.flag,color:  const Color(0xFF167F67), size: 25)),
   ];
 
   @override
@@ -33,7 +33,8 @@ class DropdownScreenState extends State<DropdownScreen> {
     return  MaterialApp(
         home:  Scaffold(
           appBar: AppBar(
-            backgroundColor: const Color(0xFF167F67),
+            backgroundColor: Colors.red,
+            // backgroundColor: const Color(0xFF167F67),
             title: Text(
               'Home',
               style: TextStyle(color: Colors.white),
@@ -50,7 +51,7 @@ class DropdownScreenState extends State<DropdownScreen> {
                         "Deck",
                         textAlign: TextAlign.center,
                         style: new TextStyle(
-                            fontSize: 18.0, color: Colors.black),
+                            fontSize: 32.0, color: Colors.black),
                       ),
                       DropdownButton<Item>(
                         hint:  Text("Select item"),
@@ -69,7 +70,7 @@ class DropdownScreenState extends State<DropdownScreen> {
                                 SizedBox(width: 8,),
                                 Text(
                                   deck.name,
-                                  style:  TextStyle(color: Colors.black),
+                                  style:  TextStyle(color: Colors.black, fontSize: 23),
                                 ),
                               ],
                             ),
@@ -84,7 +85,7 @@ class DropdownScreenState extends State<DropdownScreen> {
                       "Type",
                       textAlign: TextAlign.center,
                       style: new TextStyle(
-                          fontSize: 18.0, color: Colors.black),
+                          fontSize: 32.0, color: Colors.black),
                     ),
                     DropdownButton<Item>(
                       hint:  Text("Select item"),
@@ -103,7 +104,7 @@ class DropdownScreenState extends State<DropdownScreen> {
                               SizedBox(width: 8,),
                               Text(
                                 type.name,
-                                style:  TextStyle(color: Colors.black),
+                                style:  TextStyle(color: Colors.black, fontSize: 23),
                               ),
                             ],
                           ),
@@ -124,7 +125,7 @@ class DropdownScreenState extends State<DropdownScreen> {
                   },
                   padding: EdgeInsets.all(12),
                   color: Colors.green[500],
-                  child: Text('Start', style: TextStyle(color: Colors.white,fontSize: 20)),
+                  child: Text('Start', style: TextStyle(color: Colors.white,fontSize: 35)),
                 ),
               ],
             ),

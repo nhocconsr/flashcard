@@ -131,8 +131,8 @@ class _HomeState extends State<Home> {
               maxLines: 3,
               controller: controllerQuestion,
               decoration: new InputDecoration(
-                  hintText: "question",
-                  labelText: "question",
+                  hintText: "Question",
+                  labelText: "Question",
                   border: new OutlineInputBorder(
                       borderRadius: new BorderRadius.circular(20.0)
                   )
@@ -143,8 +143,8 @@ class _HomeState extends State<Home> {
               maxLines: 3,
               controller: controllerAnswer,
               decoration: new InputDecoration(
-                  hintText: "answer",
-                  labelText: "answer",
+                  hintText: "Answer",
+                  labelText: "Answer",
                   border: new OutlineInputBorder(
                       borderRadius: new BorderRadius.circular(20.0)
                   )
