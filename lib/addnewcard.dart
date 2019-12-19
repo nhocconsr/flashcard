@@ -119,14 +119,17 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        title: new Text("Add Card"),
-        backgroundColor: Colors.teal,
+        // title: new Text("Add Card"),
+        // backgroundColor: Colors.teal,
+        title: new Text("Add Card",style: TextStyle(color: Colors.white,)),
+        backgroundColor: Colors.pink[400],
       ),
 
       body: new Container(
         child: new Column(
           children: <Widget>[
-            new Padding(padding: new EdgeInsets.only(top: 20.0)),
+            // new Padding(padding: new EdgeInsets.only(top: 20.0)),
+            new Padding(padding: new EdgeInsets.fromLTRB(40, 60, 40, 0),),
             new TextField(
               maxLines: 3,
               controller: controllerQuestion,
@@ -134,7 +137,8 @@ class _HomeState extends State<Home> {
                   hintText: "Question",
                   labelText: "Question",
                   border: new OutlineInputBorder(
-                      borderRadius: new BorderRadius.circular(20.0)
+                      // borderRadius: new BorderRadius.circular(20.0)
+                      borderRadius: new BorderRadius.circular(20.0),
                   )
               ),
             ),
@@ -152,6 +156,7 @@ class _HomeState extends State<Home> {
             ),
             new Row(
               children: <Widget>[
+                new Padding(padding: new EdgeInsets.fromLTRB(40, 60, 40, 0),),
                 new Text("Deck     ", style: new TextStyle(fontSize: 18.0, color: Colors.blue),),
                 new DropdownButton(
                   onChanged: (String value) {
@@ -169,6 +174,7 @@ class _HomeState extends State<Home> {
             ),
             new Row(
               children: <Widget>[
+                new Padding(padding: new EdgeInsets.fromLTRB(40, 60, 40, 0),),
                 new Text("Type     ", style: new TextStyle(fontSize: 18.0, color: Colors.blue),),
                 new DropdownButton(
                   onChanged: (String value) {
@@ -186,6 +192,7 @@ class _HomeState extends State<Home> {
             ),
             new Row(
               children: <Widget>[
+                new Padding(padding: new EdgeInsets.fromLTRB(40, 60, 40, 0),),
                 new Text("Difficulty     ", style: new TextStyle(fontSize: 18.0, color: Colors.blue),),
                 new DropdownButton(
                   onChanged: (String value) {
@@ -203,7 +210,8 @@ class _HomeState extends State<Home> {
             ),
             new RaisedButton(
                 child: new Text("Review"),
-                color: Colors.red,
+                // color: Colors.red,
+                color: Colors.black87,
                 onPressed: (){confirmdata();}
             )
           ],
