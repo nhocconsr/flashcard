@@ -40,23 +40,23 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<String> deck = ["Individual", "Universal"];
-  String _deck = "Universal";
+  // List<String> deck = ["Individual", "Universal"];
+  // String _deck = "Universal";
 
   List<String> type = ["Vocabulary", "Kanji", "Hiragana", "Katakana"];
   String _type = "Vocabulary";
 
-  List<String> difficulty = ["Easy", "intermediate", "advanced"];
+  List<String> difficulty = ["Easy", "Intermediate", "Advanced"];
   String _difficulty = "Easy";
 
   TextEditingController controllerQuestion = new TextEditingController();
   TextEditingController controllerAnswer = new TextEditingController();
 
-  void setDeck(String value){
-    setState(() {
-      _deck = value;
-    });
-  }
+  // void setDeck(String value){
+  //   setState(() {
+  //     _deck = value;
+  //   });
+  // }
 
   void setType(String value){
     setState(() {
@@ -78,7 +78,7 @@ class _HomeState extends State<Home> {
           children: <Widget>[
             new Text("Question : ${controllerQuestion.text}"),
             new Text("Answer : ${controllerAnswer.text}"),
-            new Text("Deck : $_deck"),
+            // new Text("Deck : $_deck"),
             new Text("Type : $_type"),
             new Text("Difficulty : $_difficulty"),
             new RaisedButton(
@@ -154,24 +154,24 @@ class _HomeState extends State<Home> {
                   )
               ),
             ),
-            new Row(
-              children: <Widget>[
-                new Padding(padding: new EdgeInsets.fromLTRB(40, 60, 40, 0),),
-                new Text("Deck     ", style: new TextStyle(fontSize: 18.0, color: Colors.blue),),
-                new DropdownButton(
-                  onChanged: (String value) {
-                    setDeck(value);
-                  },
-                  value: _deck,
-                  items: deck.map((String value){
-                    return new DropdownMenuItem(
-                      value: value,
-                      child: new Text(value),
-                    );
-                  }).toList(),
-                )
-              ],
-            ),
+            // new Row(
+            //   children: <Widget>[
+            //     new Padding(padding: new EdgeInsets.fromLTRB(40, 60, 40, 0),),
+            //     new Text("Deck     ", style: new TextStyle(fontSize: 18.0, color: Colors.blue),),
+            //     new DropdownButton(
+            //       onChanged: (String value) {
+            //         setDeck(value);
+            //       },
+            //       value: _deck,
+            //       items: deck.map((String value){
+            //         return new DropdownMenuItem(
+            //           value: value,
+            //           child: new Text(value),
+            //         );
+            //       }).toList(),
+            //     )
+            //   ],
+            // ),
             new Row(
               children: <Widget>[
                 new Padding(padding: new EdgeInsets.fromLTRB(40, 60, 40, 0),),
@@ -211,7 +211,7 @@ class _HomeState extends State<Home> {
             new RaisedButton(
                 child: new Text("Review"),
                 // color: Colors.red,
-                color: Colors.black87,
+                color: Colors.cyan[300],
                 onPressed: (){confirmdata();}
             )
           ],
