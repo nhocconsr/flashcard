@@ -79,8 +79,8 @@ class _HomeState extends State<Home> {
             new Text("Question : ${controllerQuestion.text}"),
             new Text("Answer : ${controllerAnswer.text}"),
             // new Text("Deck : $_deck"),
-            new Text("Type : $_type"),
-            new Text("Difficulty : $_difficulty"),
+            new Text("Type : $_type", style: TextStyle(fontSize: 20),),
+            new Text("Difficulty : $_difficulty",style: TextStyle(fontSize: 20),),
             new RaisedButton(
               child: new Text("Add Card"),
 //              onPressed: () => Navigator.pop(context),
@@ -175,7 +175,7 @@ class _HomeState extends State<Home> {
             new Row(
               children: <Widget>[
                 new Padding(padding: new EdgeInsets.fromLTRB(40, 60, 40, 0),),
-                new Text("Type     ", style: new TextStyle(fontSize: 18.0, color: Colors.blue),),
+                new Text("Type     ", style: new TextStyle(fontSize: 20.0, color: Colors.black),),
                 new DropdownButton(
                   onChanged: (String value) {
                     setType(value);
@@ -193,7 +193,7 @@ class _HomeState extends State<Home> {
             new Row(
               children: <Widget>[
                 new Padding(padding: new EdgeInsets.fromLTRB(40, 60, 40, 0),),
-                new Text("Difficulty     ", style: new TextStyle(fontSize: 18.0, color: Colors.blue),),
+                new Text("Difficulty     ", style: new TextStyle(fontSize: 20.0, color: Colors.black),),
                 new DropdownButton(
                   onChanged: (String value) {
                     setDifficulty(value);
@@ -209,9 +209,9 @@ class _HomeState extends State<Home> {
               ],
             ),
             new RaisedButton(
-                child: new Text("Review"),
+                child: new Text("Review",style: TextStyle(color: Colors.white, fontSize: 23),),
                 // color: Colors.red,
-                color: Colors.cyan[300],
+                color: Colors.cyan[500],
                 onPressed: (){confirmdata();}
             )
           ],
