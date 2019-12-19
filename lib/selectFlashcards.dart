@@ -19,7 +19,7 @@ class DropdownScreenState extends State<DropdownScreen> {
 
   List<Item> decks = <Item>[
     const Item('Standard',Icon(Icons.face, color:  Colors.pinkAccent, size: 25,)),
-    const Item('Universal',Icon(Icons.language, color:  Colors.pinkAccent, size: 25,)),
+    const Item('Community',Icon(Icons.language, color:  Colors.pinkAccent, size: 25,)),
   ];
   List<Item> types = <Item>[
     const Item('Vocabulary',Icon(Icons.spellcheck, color: Colors.indigo, size: 25,)),
@@ -32,14 +32,20 @@ class DropdownScreenState extends State<DropdownScreen> {
   Widget build(BuildContext context) {
     return  MaterialApp(
         home:  Scaffold(
-          appBar: AppBar(
+          appBar: PreferredSize(
+          preferredSize: Size.fromHeight(80.0),
+          child: AppBar(
             backgroundColor: Colors.pink[400],
-            // backgroundColor: const Color(0xFF167F67),
+            shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(30),
+              ),
+            ),
             title: Text(
               'Home',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white, fontFamily: "Futura"),
             ),
-          ),
+          ),),
           body:  Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -54,7 +60,7 @@ class DropdownScreenState extends State<DropdownScreen> {
                             fontSize: 32.0, color: Colors.black),
                       ),
                       DropdownButton<Item>(
-                        hint:  Text("Select item", style: TextStyle(color: Colors.black87, fontSize: 20),),
+                        hint:  Text("Select item", style: TextStyle(color: Colors.black87, fontSize: 20,fontStyle: FontStyle.italic),),
                         value: selectedDeck,
                         onChanged: (Item Value) {
                           setState(() {
@@ -88,7 +94,7 @@ class DropdownScreenState extends State<DropdownScreen> {
                           fontSize: 32.0, color: Colors.black),
                     ),
                     DropdownButton<Item>(
-                      hint:  Text("Select item", style: TextStyle(color: Colors.black87, fontSize: 20),),
+                      hint:  Text("Select item", style: TextStyle(color: Colors.black87, fontSize: 20,fontStyle: FontStyle.italic),),
                       value: selectedType,
                       onChanged: (Item Value) {
                         setState(() {
