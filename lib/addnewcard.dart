@@ -70,24 +70,47 @@ class _HomeState extends State<Home> {
     });
   }
 
+  void successmessage() {
+    AlertDialog alertDialog = new AlertDialog(
+      content: new Container(
+        height: 200.0,
+        child: new Center(
+          child: Text("Your Card Added !"),
+        ),
+      ),
+    );
+    showDialog(context: context,child: alertDialog);
+  }
+
   void confirmdata() {
     AlertDialog alertDialog = new AlertDialog(
       content: new Container(
         height: 200.0,
         child: new Column(
           children: <Widget>[
-            new Text("Question : ${controllerQuestion.text}"),
-            new Text("Answer : ${controllerAnswer.text}"),
-            // new Text("Deck : $_deck"),
+            new Text("Question : ${controllerQuestion.text}", style: TextStyle(fontSize: 20),),
+            new Text("Answer : ${controllerAnswer.text}", style: TextStyle(fontSize: 20),),
             new Text("Type : $_type", style: TextStyle(fontSize: 20),),
             new Text("Difficulty : $_difficulty",style: TextStyle(fontSize: 20),),
-            new RaisedButton(
-              child: new Text("Add Card"),
+            new Padding(padding: new EdgeInsets.fromLTRB(10, 10, 10, 20),),
+            new Row(
+              mainAxisAlignment:MainAxisAlignment.spaceEvenly ,
+              children: <Widget>[
+                new RaisedButton(
+                  child: new Text("Add Card"),
 //              onPressed: () => Navigator.pop(context),
-                onPressed: () {
-                  _createPost();
-                },
-            ),
+                  onPressed: () {
+                    _createPost();
+                    Navigator.pop(context);
+                    successmessage();
+                  },
+                ),
+                new RaisedButton(
+                  child: new Text("Cancel"),
+                  onPressed: () => Navigator.pop(context),
+                ),
+              ],
+            )
           ],
         ),
       ),
