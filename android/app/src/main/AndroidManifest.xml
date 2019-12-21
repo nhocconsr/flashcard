@@ -11,7 +11,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="duelingo_flashcard"
-        android:icon="@mipmap/lexiverse.256">
+        android:icon="@mipmap/lexiverse_256">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
