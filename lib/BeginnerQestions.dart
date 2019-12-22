@@ -63,6 +63,9 @@ class QuestionsState extends State<Questions> {
                     child: FlipCard(
                       direction: FlipDirection.HORIZONTAL,
                       front: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.lightGreen[50]
+                        ),
 
                         //   decoration: BoxDecoration(
                         //   // Box decoration takes a gradient
@@ -82,7 +85,7 @@ class QuestionsState extends State<Questions> {
                         //   ),
                         // ),       
 
-                        padding: EdgeInsets.all(15.0),
+                        padding: EdgeInsets.all(40.0),
                         child: Card(
                           // color: list[index % list.length],
                           color: Colors.white,
@@ -97,7 +100,7 @@ class QuestionsState extends State<Questions> {
                         ),
                       ),
                       back: Container(
-
+                        
                         // decoration: BoxDecoration(
                         //   // Box decoration takes a gradient
                         //   gradient: LinearGradient(
@@ -116,10 +119,10 @@ class QuestionsState extends State<Questions> {
                         //   ),
                         // ),
 
-                          padding: EdgeInsets.all(15.0),
+                          padding: EdgeInsets.all(40.0),
                           child: Card(
                             // color: Colors.lime,
-                             color: Colors.teal[50],
+                             color: Colors.lightGreen[50],
                             child: Center(
                               child: Text(
                                 "${questionsData[index]["Answer"]}",
