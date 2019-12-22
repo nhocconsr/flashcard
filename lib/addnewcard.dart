@@ -145,7 +145,7 @@ class _HomeState extends State<Home> {
         // title: new Text("Add Card"),
         // backgroundColor: Colors.teal,
         title: new Text("Add Card",style: TextStyle(color: Colors.white,)),
-        backgroundColor: Colors.pink[400],
+        backgroundColor: Colors.purple[900],
       ),
 
       body: new Container(
@@ -234,7 +234,7 @@ class _HomeState extends State<Home> {
             new RaisedButton(
                 child: new Text("Review",style: TextStyle(color: Colors.white, fontSize: 23),),
                 // color: Colors.red,
-                color: Colors.cyan[500],
+                color: Colors.purple[900],
                 onPressed: (){confirmdata();}
             )
           ],
