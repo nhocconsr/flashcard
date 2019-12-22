@@ -2,31 +2,16 @@ import 'package:flutter/material.dart';
 import './BeginnerQestions.dart';
 import './addnewcard.dart';
 
-class Item {
-  const Item(this.name,this.icon);
-  final String name;
-  final Icon icon;
-}
-
 class DropdownScreen extends StatefulWidget {
   State createState() =>  DropdownScreenState();
 }
 
 class DropdownScreenState extends State<DropdownScreen> {
-  Item selectedDeck;
-  Item selectedJLPT;
-  Item selectedType;
+  List decks = ['Standard', 'Universal'];
+  List types = ['Vocabulary', 'Kanji', 'Hiragana', 'Katakana'];
 
-  List<Item> decks = <Item>[
-    const Item('Standard',Icon(Icons.face, color:  Colors.pinkAccent, size: 25,)),
-    const Item('Community',Icon(Icons.language, color:  Colors.pinkAccent, size: 25,)),
-  ];
-  List<Item> types = <Item>[
-    const Item('Vocabulary',Icon(Icons.spellcheck, color: Colors.indigo, size: 25,)),
-    const Item('Kanji',Icon(Icons.translate, color:Colors.indigo, size: 25)),
-    const Item('Hiragana',Icon(Icons.star_border, color:Colors.indigo, size: 25)),
-    const Item('Katakana',Icon(Icons.star, color:Colors.indigo,  size: 25)),
-  ];
+  String selectedDeck = 'Standard';
+  String selectedType = 'Vocabulary';
 
   @override
   Widget build(BuildContext context) {
@@ -59,23 +44,22 @@ class DropdownScreenState extends State<DropdownScreen> {
                         style: new TextStyle(
                             fontSize: 32.0, color: Colors.black),
                       ),
-                      DropdownButton<Item>(
-                        hint:  Text("Select item", style: TextStyle(color: Colors.black87, fontSize: 20,fontStyle: FontStyle.italic),),
+                      DropdownButton(
+                        hint:  Text("Select item", style: TextStyle(color: Colors.black87, fontSize: 20),),
                         value: selectedDeck,
-                        onChanged: (Item Value) {
+                        onChanged: (Value) {
                           setState(() {
                             selectedDeck = Value;
                           });
                         },
-                        items: decks.map((Item deck) {
-                          return  DropdownMenuItem<Item>(
+                        items: decks.map((deck) {
+                          return  DropdownMenuItem(
                             value: deck,
                             child: Row(
                               children: <Widget>[
-                                deck.icon,
                                 SizedBox(width: 8,),
                                 Text(
-                                  deck.name,
+                                  deck,
                                   style:  TextStyle(color: Colors.black, fontSize: 23),
                                 ),
                               ],
@@ -93,23 +77,22 @@ class DropdownScreenState extends State<DropdownScreen> {
                       style: new TextStyle(
                           fontSize: 32.0, color: Colors.black),
                     ),
-                    DropdownButton<Item>(
-                      hint:  Text("Select item", style: TextStyle(color: Colors.black87, fontSize: 20,fontStyle: FontStyle.italic),),
+                    DropdownButton(
+                      hint:  Text("Select item", style: TextStyle(color: Colors.black87, fontSize: 20),),
                       value: selectedType,
-                      onChanged: (Item Value) {
+                      onChanged: (Value) {
                         setState(() {
                           selectedType = Value;
                         });
                       },
-                      items: types.map((Item type) {
-                        return  DropdownMenuItem<Item>(
+                      items: types.map((type) {
+                        return  DropdownMenuItem(
                           value: type,
                           child: Row(
                             children: <Widget>[
-                              type.icon,
                               SizedBox(width: 8,),
                               Text(
-                                type.name,
+                                type,
                                 style:  TextStyle(color: Colors.black, fontSize: 23),
                               ),
                             ],
@@ -126,7 +109,7 @@ class DropdownScreenState extends State<DropdownScreen> {
                   onPressed: () {
 //                Navigator.of(context).pushNamed(Category1.tag);
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => Questions(selectedDeck.name, selectedType.name),
+                      builder: (context) => Questions(selectedDeck, selectedType),
                     ));
                   },
                   padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
