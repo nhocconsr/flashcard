@@ -18,17 +18,17 @@ class DropdownScreenState extends State<DropdownScreen> {
     return  MaterialApp(
         home:  Scaffold(
           appBar: PreferredSize(
-          preferredSize: Size.fromHeight(80.0),
+          preferredSize: Size.fromHeight(60.0),
           child: AppBar(
-            backgroundColor: Colors.pink[400],
+            backgroundColor: Colors.purple[900],
             shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(30),
+            // bottom: Radius.circular(30),
               ),
             ),
             title: Text(
               'Home',
-              style: TextStyle(color: Colors.white, fontFamily: "Futura"),
+              style: TextStyle(color: Colors.lightGreenAccent, fontFamily: "Futura"),
             ),
           ),),
           body:  Center(
@@ -36,6 +36,7 @@ class DropdownScreenState extends State<DropdownScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children:[
+                Image.asset('assets/logo_grey_black.png'),
                 Column(
                     children: [
                       Text(
