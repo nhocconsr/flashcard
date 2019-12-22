@@ -28,7 +28,7 @@ class DropdownScreenState extends State<DropdownScreen> {
             ),
             title: Text(
               'Home',
-              style: TextStyle(color: Colors.lightGreenAccent, fontFamily: "Futura"),
+              style: TextStyle(color: Colors.white),
             ),
           ),),
           body:  Center(
