@@ -108,22 +108,20 @@ class DropdownScreenState extends State<DropdownScreen> {
                     borderRadius: BorderRadius.circular(30),
                   ),
                   onPressed: () {
-//                Navigator.of(context).pushNamed(Category1.tag);
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => Questions(selectedDeck, selectedType),
                     ));
                   },
                   padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
-                  color: Colors.cyan[500],
-                  child: Text('Start', style: TextStyle(color: Colors.white,fontSize: 35)),
+                  color: Colors.purple[800],
+                  child: Text('Start', style: TextStyle(color: Colors.white,fontSize: 23)),
                 ),
               ],
             ),
           ),
           floatingActionButton: FloatingActionButton.extended(
-            backgroundColor: Colors.yellow[800],
-            icon: Icon(Icons.library_books),
-            label: Text("Add", style: TextStyle(color: Colors.white,fontSize: 20,)),
+            backgroundColor: Colors.limeAccent,
+            label: Text("Add", style: TextStyle(color: Colors.grey,fontSize: 18,)),
             onPressed: () {
               Navigator.of(context).pushNamed(Home.tag);
             },
