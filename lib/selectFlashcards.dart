@@ -17,19 +17,26 @@ class DropdownScreenState extends State<DropdownScreen> {
   Widget build(BuildContext context) {
     return  MaterialApp(
         home:  Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.pink[400],
-            // backgroundColor: const Color(0xFF167F67),
+          appBar: PreferredSize(
+          preferredSize: Size.fromHeight(60.0),
+          child: AppBar(
+            backgroundColor: Colors.purple[900],
+            shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+            // bottom: Radius.circular(30),
+              ),
+            ),
             title: Text(
               'Home',
               style: TextStyle(color: Colors.white),
             ),
-          ),
+          ),),
           body:  Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children:[
+                Image.asset('assets/logo_grey_black.png'),
                 Column(
                     children: [
                       Text(
@@ -101,22 +108,20 @@ class DropdownScreenState extends State<DropdownScreen> {
                     borderRadius: BorderRadius.circular(30),
                   ),
                   onPressed: () {
-//                Navigator.of(context).pushNamed(Category1.tag);
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => Questions(selectedDeck, selectedType),
                     ));
                   },
                   padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
-                  color: Colors.cyan[500],
-                  child: Text('Start', style: TextStyle(color: Colors.white,fontSize: 35)),
+                  color: Colors.purple[800],
+                  child: Text('Start', style: TextStyle(color: Colors.white,fontSize: 23)),
                 ),
               ],
             ),
           ),
           floatingActionButton: FloatingActionButton.extended(
-            backgroundColor: Colors.yellow[800],
-            icon: Icon(Icons.library_books),
-            label: Text("Add", style: TextStyle(color: Colors.white,fontSize: 20,)),
+            backgroundColor: Colors.limeAccent,
+            label: Text("Add", style: TextStyle(color: Colors.grey,fontSize: 18,)),
             onPressed: () {
               Navigator.of(context).pushNamed(Home.tag);
             },

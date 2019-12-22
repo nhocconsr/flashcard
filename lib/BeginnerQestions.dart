@@ -51,7 +51,7 @@ class QuestionsState extends State<Questions> {
             // title: Text(widget.deck),
             // backgroundColor: Colors.teal,
             title: Text(widget.deck,style: TextStyle(color: Colors.white,)),
-            backgroundColor: Colors.pink[400],
+            backgroundColor: Colors.purple[900],
           ),
           body:
           TransformerPageView(
@@ -63,26 +63,29 @@ class QuestionsState extends State<Questions> {
                     child: FlipCard(
                       direction: FlipDirection.HORIZONTAL,
                       front: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.lightGreen[50]
+                        ),
 
-                          decoration: BoxDecoration(
-                          // Box decoration takes a gradient
-                          gradient: LinearGradient(
-                            // Where the linear gradient begins and ends
-                            begin: Alignment.topRight,
-                            end: Alignment.bottomLeft,
-                            // Add one stop for each color. Stops should increase from 0 to 1
-                            stops: [0.1, 0.5, 0.7, 0.9],
-                            colors: [
-                              // Colors are easy thanks to Flutter's Colors class.
-                              Colors.deepPurple[800],
-                              Colors.deepPurple[500],
-                              Colors.deepPurple[300],
-                              Colors.deepPurple[100],
-                            ],
-                          ),
-                        ),       
+                        //   decoration: BoxDecoration(
+                        //   // Box decoration takes a gradient
+                        //   gradient: LinearGradient(
+                        //     // Where the linear gradient begins and ends
+                        //     begin: Alignment.topRight,
+                        //     end: Alignment.bottomLeft,
+                        //     // Add one stop for each color. Stops should increase from 0 to 1
+                        //     stops: [0.1, 0.5, 0.7, 0.9],
+                        //     colors: [
+                        //       // Colors are easy thanks to Flutter's Colors class.
+                        //       Colors.lime[300],
+                        //       Colors.lime[200],
+                        //       Colors.lime[100],
+                        //       Colors.lime[50],
+                        //     ],
+                        //   ),
+                        // ),       
 
-                        padding: EdgeInsets.all(15.0),
+                        padding: EdgeInsets.all(40.0),
                         child: Card(
                           // color: list[index % list.length],
                           color: Colors.white,
@@ -97,29 +100,29 @@ class QuestionsState extends State<Questions> {
                         ),
                       ),
                       back: Container(
+                        
+                        // decoration: BoxDecoration(
+                        //   // Box decoration takes a gradient
+                        //   gradient: LinearGradient(
+                        //     // Where the linear gradient begins and ends
+                        //     begin: Alignment.topRight,
+                        //     end: Alignment.bottomLeft,
+                        //     // Add one stop for each color. Stops should increase from 0 to 1
+                        //     stops: [0.1, 0.5, 0.7, 0.9],
+                        //     colors: [
+                        //       // Colors are easy thanks to Flutter's Colors class.
+                        //       Colors.deepPurple[800],
+                        //       Colors.deepPurple[500],
+                        //       Colors.deepPurple[300],
+                        //       Colors.deepPurple[100],
+                        //     ],
+                        //   ),
+                        // ),
 
-                        decoration: BoxDecoration(
-                          // Box decoration takes a gradient
-                          gradient: LinearGradient(
-                            // Where the linear gradient begins and ends
-                            begin: Alignment.topRight,
-                            end: Alignment.bottomLeft,
-                            // Add one stop for each color. Stops should increase from 0 to 1
-                            stops: [0.1, 0.5, 0.7, 0.9],
-                            colors: [
-                              // Colors are easy thanks to Flutter's Colors class.
-                              Colors.deepPurple[800],
-                              Colors.deepPurple[500],
-                              Colors.deepPurple[300],
-                              Colors.deepPurple[100],
-                            ],
-                          ),
-                        ),
-
-                          padding: EdgeInsets.all(15.0),
+                          padding: EdgeInsets.all(40.0),
                           child: Card(
                             // color: Colors.lime,
-                             color: Colors.teal[50],
+                             color: Colors.lightGreen[50],
                             child: Center(
                               child: Text(
                                 "${questionsData[index]["Answer"]}",
@@ -142,7 +145,7 @@ class QuestionsState extends State<Questions> {
           // title: Text(widget.deck),
           // backgroundColor: Colors.teal,
           title: Text(widget.deck,style: TextStyle(color: Colors.white,)),
-          backgroundColor: Colors.pink[400],
+          backgroundColor: Colors.purple[900],
         ),
       );
     }
