@@ -75,7 +75,7 @@ class _HomeState extends State<Home> {
       content: new Container(
         height: 200.0,
         child: new Center(
-          child: Text("Your Card Added !"),
+          child: Text("Successfully Added!",style: TextStyle(fontSize: 20),),
         ),
       ),
     );
@@ -142,7 +142,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-      iconTheme: IconThemeData(
+          iconTheme: IconThemeData(
             color: Colors.white, 
           ),
         title: new Text("Add Card",style: TextStyle(color: Colors.white,)),
@@ -233,9 +233,13 @@ class _HomeState extends State<Home> {
               ],
             ),
             new RaisedButton(
-                child: new Text("Review",style: TextStyle(color: Colors.white, fontSize: 23),),
+               shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                child: new Text("Review",style: TextStyle(color: Colors.grey, fontSize: 23),),
                 // color: Colors.red,
-                color: Colors.purple[900],
+                padding: EdgeInsets.fromLTRB(50, 10, 50, 10),
+                color: Colors.limeAccent,
                 onPressed: (){confirmdata();}
             )
           ],

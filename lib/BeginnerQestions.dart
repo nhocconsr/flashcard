@@ -48,7 +48,7 @@ class QuestionsState extends State<Questions> {
 
       return Scaffold(
           appBar: AppBar(
-            iconTheme: IconThemeData(
+           iconTheme: IconThemeData(
             color: Colors.white, 
           ),
             title: Text(widget.deck,style: TextStyle(color: Colors.white,)),
@@ -143,7 +143,7 @@ class QuestionsState extends State<Questions> {
     } else {
       return Scaffold(
         appBar: AppBar(
-          iconTheme: IconThemeData(
+            iconTheme: IconThemeData(
             color: Colors.white, 
           ),
           title: Text(widget.deck,style: TextStyle(color: Colors.white,)),
