@@ -142,8 +142,9 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        // title: new Text("Add Card"),
-        // backgroundColor: Colors.teal,
+      iconTheme: IconThemeData(
+            color: Colors.white, 
+          ),
         title: new Text("Add Card",style: TextStyle(color: Colors.white,)),
         backgroundColor: Colors.purple[900],
       ),
