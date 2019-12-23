@@ -21,7 +21,7 @@ class QuestionsState extends State<Questions> {
   List questionsData;
 
   Future getData() async {
-    http.Response response = await http.get("http://13.114.171.232/${widget.deck}/N5/${widget.type}");
+    http.Response response = await http.get("http://api.lexiverse.noi22.com/${widget.deck}/N5/${widget.type}");
     data = json.decode(response.body);
     setState(() {
       questionsData = data["results"];
