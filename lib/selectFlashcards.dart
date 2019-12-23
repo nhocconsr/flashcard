@@ -23,7 +23,6 @@ class DropdownScreenState extends State<DropdownScreen> {
             backgroundColor: Colors.purple[900],
             shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
-            // bottom: Radius.circular(30),
               ),
             ),
             title: Text(
