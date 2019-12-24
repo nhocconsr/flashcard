@@ -120,7 +120,7 @@ class _HomeState extends State<Home> {
 
   void _createPost() async {
     final response = await http.post(
-      'http://13.114.171.232/universal',
+      'http://api.lexiverse.noi22.com/universal',
       body: jsonEncode(
         {
           'Question': controllerQuestion.text,
