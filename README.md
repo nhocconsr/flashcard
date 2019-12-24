@@ -1,6 +1,6 @@
-# duelingo_flashcard
+# Lexiverse
 
-duelingo_flashcard
+flashcard application
 
 ## Getting Started
 

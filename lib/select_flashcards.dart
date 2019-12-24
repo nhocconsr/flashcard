@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './BeginnerQestions.dart';
-import './addnewcard.dart';
+import './show_flashcards.dart';
+import './add_newcard.dart';
 
 class DropdownScreen extends StatefulWidget {
   State createState() =>  DropdownScreenState();
