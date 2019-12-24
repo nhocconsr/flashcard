@@ -29,6 +29,7 @@ class DropdownScreenState extends State<DropdownScreen> {
               'Home',
               style: TextStyle(color: Colors.white),
             ),
+            centerTitle: true,
           ),),
           body:  Center(
             child: Column(
