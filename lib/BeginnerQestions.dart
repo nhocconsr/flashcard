@@ -38,12 +38,6 @@ class QuestionsState extends State<Questions> {
   Widget build(BuildContext context) {
     if (questionsData != null) {
 
-      // List<Color> list = [
-      //   Colors.blue[50],
-      //   Colors.blue[100],
-      //   Colors.blue[200]
-      // ];
-
       questionsData.shuffle();
 
       return Scaffold(
@@ -67,25 +61,6 @@ class QuestionsState extends State<Questions> {
                         decoration: BoxDecoration(
                           color: Colors.lightGreen[50]
                         ),
-
-                        //   decoration: BoxDecoration(
-                        //   // Box decoration takes a gradient
-                        //   gradient: LinearGradient(
-                        //     // Where the linear gradient begins and ends
-                        //     begin: Alignment.topRight,
-                        //     end: Alignment.bottomLeft,
-                        //     // Add one stop for each color. Stops should increase from 0 to 1
-                        //     stops: [0.1, 0.5, 0.7, 0.9],
-                        //     colors: [
-                        //       // Colors are easy thanks to Flutter's Colors class.
-                        //       Colors.lime[300],
-                        //       Colors.lime[200],
-                        //       Colors.lime[100],
-                        //       Colors.lime[50],
-                        //     ],
-                        //   ),
-                        // ),       
-
                         padding: EdgeInsets.all(40.0),
                         child: Card(
                           // color: list[index % list.length],
@@ -101,25 +76,6 @@ class QuestionsState extends State<Questions> {
                         ),
                       ),
                       back: Container(
-                        
-                        // decoration: BoxDecoration(
-                        //   // Box decoration takes a gradient
-                        //   gradient: LinearGradient(
-                        //     // Where the linear gradient begins and ends
-                        //     begin: Alignment.topRight,
-                        //     end: Alignment.bottomLeft,
-                        //     // Add one stop for each color. Stops should increase from 0 to 1
-                        //     stops: [0.1, 0.5, 0.7, 0.9],
-                        //     colors: [
-                        //       // Colors are easy thanks to Flutter's Colors class.
-                        //       Colors.deepPurple[800],
-                        //       Colors.deepPurple[500],
-                        //       Colors.deepPurple[300],
-                        //       Colors.deepPurple[100],
-                        //     ],
-                        //   ),
-                        // ),
-
                           padding: EdgeInsets.all(40.0),
                           child: Card(
                             // color: Colors.lime,
