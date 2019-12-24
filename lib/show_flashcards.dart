@@ -46,6 +46,7 @@ class QuestionsState extends State<Questions> {
             color: Colors.white, 
           ),
             title: Text(widget.deck,style: TextStyle(color: Colors.white,)),
+            centerTitle: true,
             backgroundColor: Colors.purple[900],
           ),
           body:
@@ -103,6 +104,7 @@ class QuestionsState extends State<Questions> {
             color: Colors.white, 
           ),
           title: Text(widget.deck,style: TextStyle(color: Colors.white,)),
+          centerTitle: true,
           backgroundColor: Colors.purple[900],
         ),
       );

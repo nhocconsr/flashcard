@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './addnewcard.dart';
-import './selectFlashcards.dart';
+import './add_newcard.dart';
+import './select_flashcards.dart';
 
 void main() => runApp(MyApp());
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
@@ -136,6 +135,7 @@ class _HomeState extends State<Home> {
             color: Colors.white, 
           ),
         title: new Text("Add Card",style: TextStyle(color: Colors.white,)),
+        centerTitle: true,
         backgroundColor: Colors.purple[900],
       ),
 
